@@ -9,17 +9,18 @@ if __name__ == "__main__":
     parser.add_argument(
         "--test-image", default='./test.png', type=str, required=True)
     parser.add_argument(
-        "--model-folder", default='./output/', type=str)
+        "--model-folder", default='./.output/', type=str)
 
     args = parser.parse_args()
 
     # Loading Model
-    model = load_model(args.model_folder)
+    model = load_model(args.model_folder, compile=False)
 
     # Load test image
-    image = preprocessing.image.load_img(args.test_file_path)
+    image = preprocessing.image.load_img(args.test_image)
     input_arr = preprocessing.image.img_to_array(image)
     x = np.array([input_arr])
 
     predictions = model.predict(x)
-    print('Result: {}'.format(np.argmax(predictions), axis=1))
+    predicted_result = '{}'.format(np.argmax(predictions), axis=1)
+    print(predicted_result)

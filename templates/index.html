@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ViT Transformer</title>
+  </head>
+  <link rel="stylesheet" href="static/styles.css">
+  <body>
+    <div class="header">
+      <h1>
+        An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
+      </h1>
+      <button class="code-link" onclick="location.href='https://github.com/protonx-engineering/vit'" type="button">
+        Source code tham khảo &rarr;
+      </button>
+      <button class="paper-link" onclick="location.href='https://paperswithcode.com/paper/an-image-is-worth-16x16-words-transformers-1'" type="button">
+        Bài báo về đề tài &rarr;
+      </button>
+    </div>
+
+    <div class="content">
+      <div class="upload">
+        <img src="static/image.png" alt="Image icon">
+        <div>Upload Ảnh</div>
+      </div>
+      <!-- <form action="/predict" method="post" enctype=multipart/form-data>
+        <input type="file" accept="image/*" name="image" required/>
+        <button type="submit">submit</button>
+      </form>
+      <h2 style="color: violet">{{predicted_result}}</h2>
+      <img src="{{filename}}"> -->
+      <div class="predict">
+        <button class="upload-another-btn" type="button">Upload ảnh khác</button>
+        <button class="recognize-btn" type="button">Nhận dạng</button>
+        <div class="result">Kết quả nhận dạng
+          <div class="predict-text">{{predicted_result}}</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <div class="info">
+        <span>Nguyễn Ngọc Thúy Quỳnh | 20120176</span>
+        <span>Nguyễn Ngọc Thùy | 20120206</span>
+        <span>Nguyễn Thị Ngọc Thành | 20120581</span>
+        <span>Nguyễn Hạnh Thư | 20120589</span>
+      </div>
+    </div>
+  </body>
+</html>
