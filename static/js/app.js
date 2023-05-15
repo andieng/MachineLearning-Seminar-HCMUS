@@ -1,6 +1,6 @@
 if (predict_text.innerText === '') {
-    predict_container.style.display = 'none'
-    upload_container.style.marginRight = '0px'
+    recognize_btn.style.display = 'none'
+    result.style.display = 'none'
 }
 
 if (preview_img.src !== window.location.href) {
@@ -11,11 +11,11 @@ if (preview_img.src !== window.location.href) {
 
 image.onchange = evt => {
     const [file] = image.files
-    predict_container.style.display = 'flex'
+    recognize_btn.style.display = 'block'
+    result.style.display = 'block'
     if (predict_text.innerText === '') {
         result.style.display = 'none'
     }
-    upload_container.style.marginRight = '250px'
     if (file) {
         preview_img.style.display = 'block'
         img_icon.style.display = 'none'

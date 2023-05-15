@@ -11,6 +11,7 @@
   --dark-btn-hover: #2b2c39;
   --main-btn: #5b58fb;
   --main-btn-hover: #3325d2;
+  --warning-text: #f7cd8d;
 }
 
 body {
@@ -164,6 +165,10 @@ body {
 .content > .predict > .result {
   margin-top: 70px;
   text-align: center;
+}
+
+.warning-text {
+  color: var(--warning-text);
 }
 
 .predict-text {

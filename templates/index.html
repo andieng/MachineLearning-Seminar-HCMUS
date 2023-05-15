@@ -28,7 +28,8 @@
             <img id="preview_img" src="{{filename}}" alt="Upload Image"/>
           </div>
         <div class="predict" id="predict_container">
-          <button class="recognize-btn" type="submit">Nhận dạng</button>
+          <div class="warning-text">*** Chỉ nhận dạng được ảnh 150x150px</div>
+          <button class="recognize-btn" type="submit" id="recognize_btn">Nhận dạng</button>
           <div class="result" id="result">Kết quả nhận dạng
             <div class="predict-text" id="predict_text">{{predicted_result}}</div>
           </div>
