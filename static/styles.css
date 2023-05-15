@@ -79,16 +79,49 @@ body {
   justify-content: center;
   flex-direction: column;
   margin-right: 250px;
-}
-
-.content > .upload > img {
-  height: 20%;
-  margin-bottom: 10px;
+  position: relative;
 }
 
 .content > .upload:hover {
   background-color: var(--box-hover);
   color: var(--text-hover);
+}
+
+.content > .upload > .img-icon {
+  height: 20%;
+  margin-bottom: 10px;
+}
+
+.content > .upload > input {
+  opacity: 0.0;
+
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+
+  /* IE 5-7 */
+  filter: alpha(opacity=0);
+
+  /* Netscape or and older firefox browsers */
+  -moz-opacity: 0.0;
+
+  /* older Safari browsers */
+  -khtml-opacity: 0.0;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.content > .upload > #preview_img {
+  display: none;
+  width: 100%;
+  height: 100%; 
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .content > .predict {
@@ -139,7 +172,7 @@ body {
   padding: 16px;
   margin-top: 16px;
   text-transform: capitalize;
-  letter-spacing: 1px;
+  font-size: 1.5rem;
 }
 
 .footer {

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ViT Transformer</title>
+    <link rel="stylesheet" href="static/styles.css">
   </head>
-  <link rel="stylesheet" href="static/styles.css">
   <body>
     <div class="header">
       <h1>
@@ -19,27 +19,22 @@
         Bài báo về đề tài &rarr;
       </button>
     </div>
-
-    <div class="content">
-      <div class="upload">
-        <img src="static/images/resource/image.png" alt="Image icon">
-        <div>Upload Ảnh</div>
-      </div>
-      <!-- <form action="/predict" method="post" enctype=multipart/form-data>
-        <input type="file" accept="image/*" name="image" required/>
-        <button type="submit">submit</button>
-      </form>
-      <h2 style="color: violet">{{predicted_result}}</h2>
-      <img src="{{filename}}"> -->
-      <div class="predict">
-        <button class="upload-another-btn" type="button">Upload ảnh khác</button>
-        <button class="recognize-btn" type="button">Nhận dạng</button>
-        <div class="result">Kết quả nhận dạng
-          <div class="predict-text">{{predicted_result}}</div>
+    <form action="/predict" method="post" enctype=multipart/form-data>
+      <div class="content">
+          <div class="upload" id="upload_container">
+            <img class="img-icon" src="static/images/resource/image.png" alt="Image icon" id="img_icon">
+            <div id="upload_text">Upload Ảnh</div>
+            <input type="file" accept="image/*" name="image" id="image" required>
+            <img id="preview_img" src="{{filename}}" alt="Upload Image"/>
+          </div>
+        <div class="predict" id="predict_container">
+          <button class="recognize-btn" type="submit">Nhận dạng</button>
+          <div class="result" id="result">Kết quả nhận dạng
+            <div class="predict-text" id="predict_text">{{predicted_result}}</div>
+          </div>
         </div>
       </div>
-    </div>
-    
+    </form>
     <div class="footer">
       <div class="info">
         <span>Nguyễn Ngọc Thúy Quỳnh | 20120176</span>
@@ -48,5 +43,6 @@
         <span>Nguyễn Hạnh Thư | 20120589</span>
       </div>
     </div>
+    <script src="static/js/app.js"></script>
   </body>
 </html>
