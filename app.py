@@ -8,8 +8,6 @@ IMG_FOLDER = os.path.join('static')
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = IMG_FOLDER
 
-folder = './data/train'
-
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -18,10 +16,10 @@ def home():
 def predict():
     file = request.files['image']
     filename = secure_filename(file.filename)
-    file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    print(os.path.join(IMG_FOLDER, filename))
-
-    result = subprocess.run(['python', 'predict.py', '--test-image', f'{os.path.join(IMG_FOLDER, filename)}'], capture_output=True)
+    test_folder = os.path.join(IMG_FOLDER, 'images', 'test')
+    file.save(os.path.join(test_folder, filename))
+    print(os.path.join(test_folder, filename))
+    result = subprocess.run(['python', 'predict.py', '--test-image', f'{os.path.join(test_folder, filename)}'], capture_output=True)
 
     output = int(result.stdout.decode().splitlines()[-1])
 
@@ -33,7 +31,7 @@ def predict():
     else:
         predicted_result = 'chó'
 
-    return render_template('index.html', predicted_result = predicted_result, filename = os.path.join(IMG_FOLDER, filename))
+    return render_template('index.html', predicted_result = predicted_result, filename = os.path.join(test_folder, filename))
 
 if __name__ == '__main__':
     app.run()

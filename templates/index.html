@@ -5,27 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ViT Transformer</title>
-    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/css/styles.css">
   </head>
   <body>
     <div class="header">
       <h1>
         An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale
       </h1>
-      <button class="code-link" onclick="location.href='https://github.com/protonx-engineering/vit'" type="button">
+
+      <button class="code-link" onclick="openLinkInNewTab('https://github.com/protonx-engineering/vit')" type="button">
         Source code tham khảo &rarr;
       </button>
-      <button class="paper-link" onclick="location.href='https://paperswithcode.com/paper/an-image-is-worth-16x16-words-transformers-1'" type="button">
+
+      <button class="paper-link" onclick="openLinkInNewTab('https://paperswithcode.com/paper/an-image-is-worth-16x16-words-transformers-1')" type="button">
         Bài báo về đề tài &rarr;
       </button>
+
     </div>
     <form action="/predict" method="post" enctype=multipart/form-data>
       <div class="content">
           <div class="upload" id="upload_container">
             <img class="img-icon" src="static/images/resource/image.png" alt="Image icon" id="img_icon">
-            <div id="upload_text">Upload Ảnh</div>
             <input type="file" accept="image/*" name="image" id="image" required>
             <img id="preview_img" src="{{filename}}" alt="Upload Image"/>
+            <div id="overlay">
+              <span>Upload Ảnh</span>
+            </div>
           </div>
         <div class="predict" id="predict_container">
           <div class="warning-text">*** Chỉ nhận dạng được ảnh 150x150px</div>
